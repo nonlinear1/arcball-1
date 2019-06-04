@@ -7,7 +7,8 @@
 
 using namespace std;
 
-// Inspirada na implementação de arcball de https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Tutorial_Arcball
+
+// Implementação baseada na implementação de arcball de https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Tutorial_Arcball
 
 int last_mx = 0, last_my = 0, cur_mx = 0, cur_my = 0;
 int arcball_on = false;
@@ -108,7 +109,7 @@ void myDisplay(void)
     //glPushMatrix();
     //glTranslatef(0.75, 0, 0);
     glLoadMatrixd(rotation);
-    glRotatef(angle * 180 / 3.14, axis_in_camera_coord[0], axis_in_camera_coord[1], axis_in_camera_coord[2]);
+    glRotatef(angle * (180 / M_PI), axis_in_camera_coord[0], axis_in_camera_coord[1], axis_in_camera_coord[2]);
     glGetDoublev(GL_MODELVIEW_MATRIX, rotation);
     drawRect(1, 1, 1);
     //glPopMatrix();
