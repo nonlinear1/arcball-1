@@ -19,10 +19,6 @@ glm::vec3 axis_in_camera_coord;
 
 float rot = 0;
 
-double xRot = 0;
-double yRot = 0;
-double zRot = 0;
-
 double rotation[16] = {1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1};
 
 void drawRect(double x, double y, double z) {
@@ -157,8 +153,8 @@ void myReshape(int width, int height) {
 
 void myIdle() {
     rot += 0.01;
-    rotate = false;
     angle = 0;
+   
     if (cur_mx != last_mx || cur_my != last_my) {
         glm::vec3 va = get_arcball_vector(last_mx, last_my);
         glm::vec3 vb = get_arcball_vector(cur_mx,  cur_my);
