@@ -5,8 +5,9 @@
 #include <GL/glut.h>
 #include <glm/glm.hpp>
 
-
 using namespace std;
+
+// Inspirada na implementação de arcball de https://en.wikibooks.org/wiki/OpenGL_Programming/Modern_OpenGL_Tutorial_Arcball
 
 int last_mx = 0, last_my = 0, cur_mx = 0, cur_my = 0;
 int arcball_on = false;
